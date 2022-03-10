@@ -1,0 +1,54 @@
+{
+    "friend" : [
+        {
+            "id" : "1",
+            "name" : "Elisa Long",
+            "profileImageURL" : "assets/user0.jpeg",
+            "text" : "Hello",
+            "timetamp" : "20"
+        },
+        {
+            "id" : "2",
+            "name" : "Truman Warren",
+            "profileImageURL" : "assets/user1.jpeg",
+            "text" : "Hello",
+            "timetamp" : "40"
+        },
+        {
+            "id" : "3",
+            "name" : "Shannen Adamson",
+            "profileImageURL" : "assets/user2.jpeg",
+            "text" : "Hello",
+            "timetamp" : "60"
+        },
+        {
+            "id" : "4",
+            "name" : "Michelle Everly",
+            "profileImageURL" : "assets/user3.jpeg",
+            "text" : "Hello",
+            "timetamp" : "80"
+        },
+        {
+            "id" : "5",
+            "name" : "Miles Derrickson",
+            "profileImageURL" : "assets/user4.jpeg",
+            "text" : "Hello",
+            "timetamp" : "100"
+        },
+        {
+            "id" : "6",
+            "name" : "Marvin Thompsett",
+            "profileImageURL" : "assets/user5.jpeg",
+            "text" : "Hello",
+            "timetamp" : "120"
+        },
+        {
+            "id" : "7",
+            "name" : "Lennox Boone",
+            "profileImageURL" : "assets/user6.jpeg",
+            "text" : "Hello",
+            "timetamp" : "140"
+        }
+
+    ]
+}
