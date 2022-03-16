@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,7 +67,207 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 16.0),
+              child: Text(
+                'Good Afternoon',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const AlbumMini(
+                    image: 'assets/kendrick.jpg',
+                    text: 'Kendrick\nLamar',
+                  ),
+                  const AlbumMini(
+                    image: 'assets/damn.jpg',
+                    text: 'Damn',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 8.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  AlbumMini(image: 'assets/jcole.jpg', text: 'J. Cole'),
+                  AlbumMini(image: 'assets/lofi.jpeg', text: 'Lofi-Beats')
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 16.0),
+              child: Text(
+                'Recently Played',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 16.0,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(90),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(90),
+                          child: Image.asset('assets/kendrick.jpg',
+                              filterQuality: FilterQuality.high),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      const Text(
+                        "Kendrick Lamar",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 24.0,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(90),
+                        ),
+                        child: Image.asset(
+                          'assets/damn.jpg',
+                          filterQuality: FilterQuality.high,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      const Text(
+                        "Damn",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
+                      const SizedBox(
+                        width: 24.0,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(90),
+                            ),
+                            child: Image.asset(
+                              'assets/2014.jpg',
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 16.0,
+                          ),
+                          const Text(
+                            "J. Cole - 2014...",
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: Text(
+                'Recommend for you',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AlbumMini extends StatelessWidget {
+  final String image;
+  final String text;
+  const AlbumMini({Key? key, required this.image, required this.text})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 175,
+      height: 60,
+      decoration: BoxDecoration(
+        color: const Color(0xff1313132),
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 60,
+              height: 60,
+              child: Image.asset(
+                image,
+                filterQuality: FilterQuality.high,
+              ),
+            ),
+            const SizedBox(
+              width: 8.0,
+            ),
+            Text(
+              text,
+              style: const TextStyle(color: Colors.white),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
