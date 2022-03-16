@@ -71,159 +71,9 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 16.0),
-              child: Text(
-                'Good Afternoon',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(height: 24.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const AlbumMini(
-                    image: 'assets/kendrick.jpg',
-                    text: 'Kendrick\nLamar',
-                  ),
-                  const AlbumMini(
-                    image: 'assets/damn.jpg',
-                    text: 'Damn',
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 8.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AlbumMini(image: 'assets/jcole.jpg', text: 'J. Cole'),
-                  AlbumMini(image: 'assets/lofi.jpeg', text: 'Lofi-Beats')
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 24.0,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 16.0),
-              child: Text(
-                'Recently Played',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(height: 24.0),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 16.0,
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        height: 120,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(90),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(90),
-                          child: Image.asset('assets/kendrick.jpg',
-                              filterQuality: FilterQuality.high),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 16.0,
-                      ),
-                      const Text(
-                        "Kendrick Lamar",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 24.0,
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        height: 120,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(90),
-                        ),
-                        child: Image.asset(
-                          'assets/damn.jpg',
-                          filterQuality: FilterQuality.high,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 16.0,
-                      ),
-                      const Text(
-                        "Damn",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                      const SizedBox(
-                        width: 24.0,
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            height: 120,
-                            width: 120,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(90),
-                            ),
-                            child: Image.asset(
-                              'assets/2014.jpg',
-                              filterQuality: FilterQuality.high,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 16.0,
-                          ),
-                          const Text(
-                            "J. Cole - 2014...",
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 24.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: Text(
-                'Recommend for you',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
-              ),
-            )
+            _goodafternoon(context),
+            _recentlyPlayed(context),
+            _recommendedForYou(context),
           ],
         ),
       ),
@@ -270,4 +120,264 @@ class AlbumMini extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _goodafternoon(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 16.0),
+        child: Text(
+          'Good Afternoon',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      const SizedBox(height: 24.0),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const AlbumMini(
+              image: 'assets/kendrick.jpg',
+              text: 'Kendrick\nLamar',
+            ),
+            const AlbumMini(
+              image: 'assets/damn.jpg',
+              text: 'Damn',
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(
+        height: 8.0,
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            AlbumMini(image: 'assets/jcole.jpg', text: 'J. Cole'),
+            AlbumMini(image: 'assets/lofi.jpeg', text: 'Lofi-Beats')
+          ],
+        ),
+      ),
+      const SizedBox(
+        height: 24.0,
+      ),
+    ],
+  );
+}
+
+Widget _recentlyPlayed(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 16.0),
+        child: Text(
+          'Recently Played',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      const SizedBox(height: 24.0),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            const SizedBox(
+              width: 16.0,
+            ),
+            Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(90),
+                    child: Image.asset('assets/kendrick.jpg',
+                        filterQuality: FilterQuality.high),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                const Text(
+                  "Kendrick Lamar",
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                )
+              ],
+            ),
+            const SizedBox(
+              width: 24.0,
+            ),
+            Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                  child: Image.asset(
+                    'assets/damn.jpg',
+                    filterQuality: FilterQuality.high,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                const Text(
+                  "Damn",
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                ),
+                const SizedBox(
+                  width: 24.0,
+                ),
+                Column(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(90),
+                      ),
+                      child: Image.asset(
+                        'assets/2014.jpg',
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    const Text(
+                      "J. Cole - 2014...",
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+Widget _recommendedForYou(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const SizedBox(
+        height: 24.0,
+      ),
+      const Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: Text(
+          'Recommend for you',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      const SizedBox(height: 24.0),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            const SizedBox(width: 16.0),
+            Column(
+              children: [
+                SizedBox(
+                  height: 120,
+                  width: 120,
+                  child: Image.asset(
+                    'assets/top50global.PNG',
+                    filterQuality: FilterQuality.high,
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                const Text(
+                  "Top 50 Global",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(width: 24.0),
+            Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                  child: Image.asset(
+                    'assets/top50italy.PNG',
+                    filterQuality: FilterQuality.high,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                const Text(
+                  '"Top 50 Italy',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 24.0,
+            ),
+            Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                  child: Image.asset(
+                    "assets/summerRewind.PNG",
+                    filterQuality: FilterQuality.high,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                const Text(
+                  "Summer Rewind",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      )
+    ],
+  );
 }
