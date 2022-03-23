@@ -38,10 +38,10 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.search),
             label: "Discover",
           ),
-          BottomNavigationBarItem(
-            icon: _CreateButton(),
-            label: "",
-          ),
+          // BottomNavigationBarItem(
+          //   icon: _CreateButton(),
+          //   label: "",
+          // ),
         ],
       ),
     );
