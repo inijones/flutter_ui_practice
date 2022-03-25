@@ -38,10 +38,35 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.search),
             label: "Discover",
           ),
-          // BottomNavigationBarItem(
-          //   icon: _CreateButton(),
-          //   label: "",
-          // ),
+          BottomNavigationBarItem(
+            icon: _CreateButton(),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline_outlined),
+            label: "Me",
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class _CreateButton extends StatelessWidget {
+  const _CreateButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50.0,
+      height: 40.0,
+      child: Stack(
+        children: [
+          Row(
+            children: [
+              Expanded(child: Container()),
+            ],
+          )
         ],
       ),
     );
