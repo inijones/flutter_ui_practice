@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: GoogleFonts.roboto().fontFamily,
-          canvasColor: Color(0xff282828)),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: GoogleFonts.roboto().fontFamily,
+        canvasColor: Color(0xff282828),
+      ),
       home: const HomePage(),
     );
   }
@@ -48,7 +49,64 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      body: _Body(),
     );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        PageView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Image.asset("assets/0.gif", fit: BoxFit.cover),
+            Image.asset("assets/1.gif", fit: BoxFit.cover),
+            Image.asset("assets/2.gif", fit: BoxFit.cover),
+            Image.asset("assets/3.gif", fit: BoxFit.cover),
+            Image.asset("assets/4.gif", fit: BoxFit.cover),
+            Image.asset("assets/5.gif", fit: BoxFit.cover),
+          ],
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: _Description(),
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: _Icons(),
+        )
+      ],
+    );
+  }
+}
+
+class _Icons extends StatelessWidget {
+  const _Icons({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _ProfileIcon(),
+            const SizedBox(
+              height: 24.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 8.0,
+              ),
+            )
+          ],
+        ));
   }
 }
 
@@ -64,9 +122,67 @@ class _CreateButton extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: Container()),
+              Expanded(
+                  child: Container(
+                height: double.infinity,
+                width: double.infinity,
+              )),
             ],
           )
+        ],
+      ),
+    );
+  }
+}
+
+class _Description extends StatelessWidget {
+  const _Description({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [],
+      ),
+    );
+  }
+}
+
+class _ProfileIcon extends StatelessWidget {
+  const _ProfileIcon({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70.0,
+      width: 60.0,
+      child: Stack(
+        children: [
+          Container(
+            height: 60.0,
+            width: 60.0,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(60.0),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 25.0,
+              width: 25.0,
+              decoration: BoxDecoration(
+                color: Color(0xfff73859),
+                borderRadius: BorderRadius.circular(60.0),
+              ),
+              child: const Center(
+                child: Icon(Icons.add, color: Colors.white, size: 23.0),
+              ),
+            ),
+          ),
         ],
       ),
     );
